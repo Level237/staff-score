@@ -28,4 +28,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Ajouter les routes ou les vues de l'administrateur ici
+Route::middleware(['auth','admin'])->name('admin.')->prefix('yaliwe.admin')->group(function(){
+
+
+});
+
+// Ajouter les routes ou les vues des employees ici
+Route::middleware(['auth','employee'])->name('admin.')->prefix('yaliwe.admin')->group(function(){
+
+
+});
 require __DIR__.'/auth.php';
